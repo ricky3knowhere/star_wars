@@ -1,0 +1,43 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "userId": "rghweyte",
+      "title": "Star Wars",
+      "body": "The best sci-fi movie saga",
+      "id": 2
+    },
+    {
+      "userId": "rghweytegdg",
+      "title": "Dark",
+      "body": "A confusing Netflix series",
+      "id": 3
+    },
+    {
+      "userId": "rghweytegdg",
+      "title": "The Umbrella Academy",
+      "body": "Super hero tv series",
+      "id": 4
+    },
+    {
+      "userId": "tutuht",
+      "title": "Mandalorian",
+      "body": "thth",
+      "id": 5
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
