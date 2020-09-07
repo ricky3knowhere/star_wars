@@ -37,3 +37,12 @@
     transform: rotate(360deg);
   }
 }
+
+.btn {
+  padding: 20px;
+  border: none;
+  color: white;
+  box-sizing: border-box;
+  font-size: 1rem;
+  margin: 3px;
+}

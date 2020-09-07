@@ -1,48 +1,45 @@
-import React,{useEffect, useState}from 'react'
+/* eslint-disable react/jsx-key */
+/* eslint-disable react/prop-types */
+import React from 'react'
 import axios from 'axios'
 
-function CreatePost(){
+function CreatePost(props){
 
-  const [list, setList] = useState([]);
+  const { posts, onDeleted } = props
 
-  useEffect(() => {
-    axios.get('http://localhost:5000/posts').then(
-     (data) => setList(data.data)
-    )
-  }, []);
-
+  console.log(posts)
   const deleteData = (id) => {
-    axios.delete('http://localhost:5000/posts/' + id).then(
+    axios.delete('http://localhost:3000/posts/' + id).then(
       (data) => {
         if(data.status === 200){
-          const undeleted = list.filter((post) => (post.id !== id))
-          setList(undeleted)
+          const undeleted = posts.filter((post) => (post.id !== id))
+          onDeleted(undeleted)
         }
       }
-    )  
+    )
   }
 
   return (
-  
-  <div>
-  <h3>List Post</h3>
-  
-  <ul>
-    {
-      list.map((e) => {
-      return( 
-        <li>
-        <h4>{e.title}</h4>
-        <p>{e.body}</p>
-        <button onClick={() => deleteData(e.id)}>Delete</button>
-        </li>
-        )
-      })
-    }
-  </ul>
 
-  </div>
-  
+    <div>
+      <h3>List Post</h3>
+
+      <ul>
+        {
+          posts.map((e) => {
+            return(
+              <li>
+                <h4>{e.title}</h4>
+                <p>{e.body}</p>
+                <button onClick={() => deleteData(e.id)}>Delete</button>
+              </li>
+            )
+          })
+        }
+      </ul>
+
+    </div>
+
   )
 }
 
